@@ -1,0 +1,7 @@
+/config/default.ts
+/node_modules
+node_modules
+/ui/.env*
+/server/config
+/ui/node_modules
+/server/node_modules

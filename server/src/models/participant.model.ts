@@ -28,6 +28,10 @@ const participantSchema = new mongoose.Schema(
       ref: 'group',
       default:null
     },
+    isArchived:{
+      type:Boolean,
+      default:false
+    }
   },
   {
     timestamps: true,

@@ -9,6 +9,7 @@ import {
   createParticipant,
   findAllParticipants,
   findParticipant,
+  findParticipants
 } from "../service/participant.service";
 
 export async function createParticipantHandler(
@@ -28,31 +29,20 @@ export async function createParticipantHandler(
 
 
 
-// export async function updateProductHandler(
-//   req: Request<UpdateProductInput["params"]>,
-//   res: Response
-// ) {
-//   const userId = res.locals.user._id;
+export async function findParticipantHandler(
+  req: Request<["params"]>,
+  res: Response
+) {
+  const groupId = req.params.groupId;
 
-//   const productId = req.params.productId;
-//   const update = req.body;
+  const participants = await findParticipants({ groupId },{});
 
-//   const product = await findProduct({ productId });
-
-//   if (!product) {
-//     return res.sendStatus(404);
-//   }
-
-//   if (String(product.user) !== userId) {
-//     return res.sendStatus(403);
-//   }
-
-//   const updatedProduct = await findAndUpdateProduct({ productId }, update, {
-//     new: true,
-//   });
-
-//   return res.send(updatedProduct);
-// }
+  if (!participants) {
+    return res.sendStatus(404);
+  }
+  
+  return res.send(participants);
+}
 
 export async function getParticipantsHandler(
   req: Request,
@@ -66,6 +56,9 @@ export async function getParticipantsHandler(
   }
   return res.send(participants);
 }
+
+
+
 
 // export async function deleteProductHandler(
 //   req: Request<UpdateProductInput["params"]>,

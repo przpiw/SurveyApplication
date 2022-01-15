@@ -4,7 +4,7 @@ import { object, number, string, TypeOf } from "zod";
  * @openapi
  * components:
  *   schema:
- *     Survey:
+ *     CreateSurveyInput:
  *       type: object
  *       required:
  *        - name 
@@ -18,7 +18,27 @@ import { object, number, string, TypeOf } from "zod";
  *         resubmitAfter:
  *           type: number
  */
-
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *   CreateSurveyInput:
+ *    type: object
+ *    required:
+ *      - name
+ *      - category
+ *      - resubmitAfter
+ *    properties:
+ *      name:
+ *        type: string
+ *        default: SurveyA
+ *      category:
+ *        type: string
+ *        default: General
+ *      resubmitAfter:
+ *        type: number
+ *        default: 1
+ */
 const payload = {
   body: object({
     name: string({

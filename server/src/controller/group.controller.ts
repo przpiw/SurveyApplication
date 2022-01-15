@@ -16,7 +16,6 @@ export async function createGroupHandler(
   res: Response
 ) {
   try{
-    //console.log(req.body)
     const body = req.body
     await createGroup({...body});
     return res.status(201).send()

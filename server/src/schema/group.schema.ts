@@ -20,6 +20,9 @@ const payload = {
     name: string({
       required_error: "name is required",
     }).min(1, "Lastname should be at least 2 characters long"),
+    surveyId:string({
+       required_error: "surveyId",
+    })
   }),
 };
 

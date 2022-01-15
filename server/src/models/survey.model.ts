@@ -1,7 +1,4 @@
 import mongoose from "mongoose";
-import { customAlphabet } from "nanoid";
-import { string } from "zod";
-import { UserDocument } from "./user.model";
 
 
 export interface SurveyInput {
@@ -50,16 +47,11 @@ const surveySchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+      unique:true
     },
     type: {
       type: String,
       required: false,
-    },
-    studentId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'student',
-      required: false,
-      default:null
     },
     //Minutes to resubmit
     resubmitAfter: {

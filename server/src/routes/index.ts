@@ -3,9 +3,10 @@ import express from 'express'
 
 import auth from './auth.routes'
 import user from './user.routes'
-import participants from './participants.routes'
-import groups from './group.routes'
-
+import participant from './participant.routes'
+import group from './group.routes'
+import survey from './survey.routes'
+import response from './response.routes'
 const router = express.Router();
   /**
    * @openapi
@@ -22,7 +23,8 @@ router.get('/healthcheck',(req:Request,res:Response)=>res.sendStatus(200))
 
 router.use(auth)
 router.use(user)
-router.use(participants)
-router.use(groups)
-
+router.use(participant)
+router.use(group)
+router.use(survey)
+router.use(response)
 export default router;

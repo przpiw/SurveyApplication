@@ -9,7 +9,6 @@ import swaggerDocs from './utils/swagger';
 const port = config.get<number>('port')
 const host = config.get<string>('host')
 
-
 const app = createServer();
 
 app.listen(port,async()=>{

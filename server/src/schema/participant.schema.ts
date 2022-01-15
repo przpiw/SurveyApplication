@@ -50,6 +50,11 @@ const params = {
       required_error: "id is required",
     }),
   }),
+  group_id_params: object({
+    groupId: string({
+      required_error: "groupId is required",
+    }),
+  }),
 };
 
 export const createParticipantSchema = object({

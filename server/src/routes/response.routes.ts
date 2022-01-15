@@ -1,7 +1,7 @@
 import validateResource from '../middleware/validateResource'
 import requireUser from '../middleware/requireUser'
-import {createParticipantHandler, getParticipantsHandler} from '../controller/participant.controller'
-import { createParticipantSchema } from '../schema/participant.schema'
+import {createResponseHandler, getResponsesHandler} from '../controller/response.controller'
+import { createResponseSchema } from '../schema/response.schema'
 
 import express from 'express'
 
@@ -9,35 +9,35 @@ const router = express.Router();
 
  /**
    * @openapi
-   * '/api/participants':
+   * '/api/responses':
    *  get:
    *     tags:
-   *     - Participant
-   *     summary: Get all participants 
+   *     - Response
+   *     summary: Get all responses 
    *     responses:
    *       200:
    *         description: Success
    *         content:
    *          application/json:        
    *       404:
-   *         description: Participants not found
+   *         description: Responses not found
    */
-  router.get("/api/participants/",requireUser,getParticipantsHandler  )
+  router.get("/api/responses/",requireUser,getResponsesHandler  )
 
 
 /**
    * @openapi
-   * '/api/participant':
+   * '/api/response':
    *  post:
    *     tags:
-   *     - Participant
-   *     summary: Create a participant
+   *     - Response
+   *     summary: Create a response
    *     requestBody:
    *      required: true
    *      content:
    *        application/json:
    *           schema:
-   *              $ref: '#/components/schemas/CreateParticipantInput'
+   *              $ref: '#/components/schemas/CreateResponseInput'
    *     responses:
    *      201:
    *        description: Created
@@ -46,8 +46,8 @@ const router = express.Router();
    *      400:
    *        description: Bad request
    */
-router.post("/api/participant", [requireUser, validateResource(createParticipantSchema)],
-    createParticipantHandler)
+router.post("/api/response", [requireUser, validateResource(createResponseSchema)],
+    createResponseHandler)
 
 
 export default router

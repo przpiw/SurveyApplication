@@ -26,15 +26,23 @@ export async function findAllParticipants(){
   return result
 }
 
+export async function findParticipants(
+  query: FilterQuery<ParticipantDocument>,
+  options: QueryOptions)
+  {
+  return Participant.find(query,options)
+}
 
-// export async function findAndUpdateProduct(
-//   query: FilterQuery<ProductDocument>,
-//   update: UpdateQuery<ProductDocument>,
+
+
+// export async function findAndUpdateParticipant(
+//   query: FilterQuery<ParticipantDocument>,
+//   update: UpdateQuery<ParticipantDocument>,
 //   options: QueryOptions
 // ) {
-//   return Product.findOneAndUpdate(query, update, options);
+//   return Participant.findOneAndUpdate(query, update, options);
 // }
 
-// export async function deleteProduct(query: FilterQuery<ProductDocument>) {
-//   return Product.deleteOne(query);
+// export async function deleteParticipant(query: FilterQuery<ParticipantDocument>) {
+//   return Participant.deleteOne(query);
 // }

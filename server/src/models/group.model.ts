@@ -5,7 +5,7 @@ import { string } from "zod";
 
 export interface GroupInput {
   name: string
-  //surveyId: string,
+  surveyId: string,
 }
 
 export interface GroupDocument extends GroupInput, mongoose.Document {

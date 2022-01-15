@@ -24,15 +24,3 @@ export async function findAllResponses(){
   return result
 }
 
-
-// export async function findAndUpdateProduct(
-//   query: FilterQuery<ProductDocument>,
-//   update: UpdateQuery<ProductDocument>,
-//   options: QueryOptions
-// ) {
-//   return Product.findOneAndUpdate(query, update, options);
-// }
-
-// export async function deleteProduct(query: FilterQuery<ProductDocument>) {
-//   return Product.deleteOne(query);
-// }

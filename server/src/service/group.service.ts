@@ -14,9 +14,10 @@ return group;
 
 export async function findGroup(
   query: FilterQuery<GroupDocument>,
-  options: QueryOptions = { lean: true }
+  options: QueryOptions = { lean: true },
+  projection?: any | null
 ) {
-    const result = await Group.findOne(query, {}, options);
+    const result = await Group.findOne(query, projection, options);
     return result;
 }
 export async function findAllGroups(){

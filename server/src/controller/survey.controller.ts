@@ -6,6 +6,8 @@ import {
 import {
   createSurvey, 
   findAllSurveys,
+  findSurvey,
+  findSurveyById
 } from "../service/survey.service";
 
 export async function createSurveyHandler(
@@ -60,18 +62,18 @@ export async function getSurveysHandler(
 //   return res.send(updatedSurvey);
 // }
 
-// export async function getSurveyHandler(
-//   req: Request<UpdateSurveyInput["params"]>,
-//   res: Response
-// ) {
-//   const surveyId = req.params.surveyId;
-//   const survey = await findSurvey({ surveyId });
+export async function findSurveyHandler(
+  req: Request<UpdateSurveyInput["params"]>,
+  res: Response
+) {
+  const _id = req.params.id;
+  const survey = await findSurvey({ _id },{},'_id resubmitAfter name questions');
 
-//   if (!survey) {
-//     return res.sendStatus(404);
-//   }
-//   return res.send(survey);
-// }
+  if (!survey) {
+    return res.sendStatus(404);
+  }
+  return res.send(survey);
+}
 
 // export async function deleteSurveyHandler(
 //   req: Request<UpdateSurveyInput["params"]>,

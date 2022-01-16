@@ -1,4 +1,4 @@
-import { DocumentDefinition, FilterQuery, QueryOptions,UpdateQuery } from "mongoose";
+import { DocumentDefinition, FilterQuery, QueryOptions,UpdateQuery} from "mongoose";
 import Participant,{
   ParticipantDocument,
   ParticipantInput,
@@ -28,9 +28,10 @@ export async function findAllParticipants(){
 
 export async function findParticipants(
   query: FilterQuery<ParticipantDocument>,
-  options: QueryOptions)
+  options: QueryOptions,
+  projection?: any | null,)
   {
-  return Participant.find(query,options)
+  return Participant.find(query,projection,options)
 }
 
 

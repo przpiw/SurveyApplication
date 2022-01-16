@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import {
   CreateGroupInput,
-  
+  ReadGrouptInput
 } from "../schema/group.schema";
 
 import {
@@ -38,6 +38,20 @@ export async function getGroupsHandler(
     return res.sendStatus(404);
   }
   return res.send(groups);
+}
+
+
+export async function findGroupHandler(
+  req: Request<ReadGrouptInput["params"]>,
+  res: Response
+) {
+  const _id = req.params.id;
+  const group = await findGroup({ _id },{},'surveyId');
+
+  if (!group) {
+    return res.sendStatus(404);
+  }
+  return res.send(group);
 }
 
 

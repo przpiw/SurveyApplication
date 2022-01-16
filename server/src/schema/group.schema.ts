@@ -28,7 +28,7 @@ const payload = {
 
 const params = {
   params: object({
-    name: string({
+    id: string({
       required_error: "name is required",
     }),
   }),

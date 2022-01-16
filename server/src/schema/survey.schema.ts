@@ -55,8 +55,8 @@ const payload = {
 
 const params = {
   params: object({
-    productId: string({
-      required_error: "surveyId is required",
+    id: string({
+      required_error: "id is required",
     }),
   }),
 };

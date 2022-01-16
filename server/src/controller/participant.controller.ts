@@ -35,7 +35,7 @@ export async function findParticipantHandler(
 ) {
   const groupId = req.params.groupId;
 
-  const participants = await findParticipants({ groupId },{});
+  const participants = await findParticipants({ groupId,isAchived:false },{},'firstname lastname imageURL lastSubmit');
 
   if (!participants) {
     return res.sendStatus(404);

@@ -50,7 +50,7 @@ router.post("/api/participant", [requireUser, validateResource(createParticipant
     createParticipantHandler)
 /**
    * @openapi
-   * '/api/participants/61e1a7a859f53f98aff546ec':
+   * '/api/participants/{groupId}':
    *  get:
    *     tags:
    *     - Participant

@@ -18,7 +18,12 @@ const userSchema = new mongoose.Schema({
   email:{type:String,required:true},
   name:{type:String,required:true},
   password:{type:String,required:true},
-  authorization:{type:Number,default:0}
+  authorization:{type:Number,default:0},
+  groupId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'group',
+      default:null
+    },
 },{
   timestamps:true
 })

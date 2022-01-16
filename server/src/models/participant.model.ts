@@ -22,7 +22,7 @@ const participantSchema = new mongoose.Schema(
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     imageURL: { type: String, required: true },
-    lastSubmited: { type: Date,default:null},
+    lastSubmit: { type: Date,default:null},
     groupId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'group',

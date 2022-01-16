@@ -17,11 +17,23 @@ export async function createSurvey(input: DocumentDefinition<Omit<SurveyDocument
 
 export async function findSurvey(
   query: FilterQuery<SurveyDocument>,
-  options: QueryOptions = { lean: true }
+  options: QueryOptions = { lean: true },
+  projection?: any | null
 ) {
-    const result = await Survey.findOne(query, {}, options);
+    const result = await Survey.findOne(query, projection, options);
     return result;
 }
+
+export async function findSurveyById(
+  query: FilterQuery<SurveyDocument>,
+  options: QueryOptions = { lean: true }
+) {
+    const result = await Survey.findById(query, {}, options);
+    return result;
+}
+
+
+
 export async function findAllSurveys(){
   const result = await Survey.find({});
   return result

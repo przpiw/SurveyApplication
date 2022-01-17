@@ -13,7 +13,6 @@ export default function useUser(){
     refreshWhenOffline: false,
     refreshWhenHidden: false,
   })
-
   const loading = !data && !error
 
   return{

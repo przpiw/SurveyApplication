@@ -12,10 +12,8 @@ import { wrapper } from "../redux/store"
 // }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
-  return <Provider store={store}><ProvideAuth>
-    <Component {...pageProps} /></ProvideAuth>
-</Provider>
+  return <ProvideAuth><Provider store={store}>
+    <Component {...pageProps} /></Provider> </ProvideAuth>
 }
 
 

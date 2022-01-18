@@ -17,8 +17,8 @@ export async function createResponseHandler(
 ) {
   try{
     const body = req.body;
-    const product = await createResponse({...body});
-    return res.status(201).send()
+    await createResponse({...body});
+    return res.status(201).send("Completed!")
   }
   catch(e:any){
     logger.error(e)

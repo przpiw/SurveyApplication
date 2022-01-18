@@ -3,7 +3,21 @@ import {
   PARTICIPANT_LIST_REQUEST,
   PARTICIPANT_LIST_SUCCESS,
   PARTICIPANT_LIST_FAIL,
+  PARTICIPANT_DETAILS_SAVE,
+  PARTICIPANT_DETAILS_CLEAR
 } from '../types/participantTypes'
+
+export const setActiveParticipant = (participant) => async (dispatch,getState) =>{
+  dispatch({
+    type:PARTICIPANT_DETAILS_SAVE,
+    payload:participant
+  })
+}
+export const setClearParticipant = () => async (dispatch,getState) =>{
+  dispatch({
+    type:PARTICIPANT_DETAILS_CLEAR,
+  })
+}
 
 
 //This will list participants based on user groupId

@@ -4,10 +4,11 @@ import Participant,{
   ParticipantInput,
 } from "../models/participant.model";
 
+export async function updateLastSubmit(studentId:string){
+  await Participant.findByIdAndUpdate({_id:studentId},{lastSubmit:Date.now()})
+}
 
 export async function createParticipant(input: DocumentDefinition<Omit<ParticipantDocument,'createdAt' | 'updatedAt'>>){
-
-
 let participant = await Participant.create(input)
 if(participant)
 return participant;

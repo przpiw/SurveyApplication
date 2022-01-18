@@ -19,7 +19,7 @@ import { object, number, string, TypeOf } from "zod";
  *        default: doe
  *      imageURL:
  *        type: string
- *        default: password123
+ *        default: https://via.placeholder.com/150
  *   CreateParticipantResponse:
  *    type: object
  *    properties:

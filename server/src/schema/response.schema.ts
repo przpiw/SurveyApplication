@@ -21,7 +21,9 @@ import { object, number, string, TypeOf, array } from "zod";
  *          questionNumber:
  *            type: number
  *          responseIndex:
- *            type: number     
+ *            type: number 
+ *          timeTaken:
+ *            type: number    
  *      completionTime:
  *        type: number
  *      surveyId:
@@ -31,9 +33,10 @@ import { object, number, string, TypeOf, array } from "zod";
  */
 const payload = {
   body: object({
-    response: array(object({
+    responses: array(object({
       questionNumber:number({required_error: "Question Number is required"}),
-      responseIndex:number({required_error: "Response Index is required"})
+      responseIndex:number({required_error: "Response Index is required"}),
+      timeTaken:number({required_error: "Time taken is required"})
     })
     ),
     completionTime:number({

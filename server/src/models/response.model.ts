@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 export interface ResponseInput {
   response: [{
     questionNumber:Number,
-    responseIndex:Number
+    responseIndex:Number,
+    timeTaken:Number
   }];
   completionTime: number;
   surveyId:string;
@@ -17,7 +18,7 @@ export interface ResponseDocument extends ResponseInput, mongoose.Document {
 
 const responseSchema = new mongoose.Schema(
   {
-    response: [
+    responses: [
       {
         questionNumber: {
           type: Number,
@@ -25,6 +26,9 @@ const responseSchema = new mongoose.Schema(
         responseIndex: {
           type: Number,
         },
+        timeTaken:{
+          type:Number
+        }
       },
     ],
     completionTime: {

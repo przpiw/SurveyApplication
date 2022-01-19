@@ -27,7 +27,6 @@ export async function createResponseHandler(
 }
 
 
-
 export async function getResponsesHandler(
   req: Request,
   res: Response

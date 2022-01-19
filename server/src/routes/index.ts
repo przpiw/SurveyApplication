@@ -7,6 +7,7 @@ import participant from './participant.routes'
 import group from './group.routes'
 import survey from './survey.routes'
 import response from './response.routes'
+import image from './image.routes'
 const router = express.Router();
   /**
    * @openapi
@@ -27,4 +28,5 @@ router.use(participant)
 router.use(group)
 router.use(survey)
 router.use(response)
+router.use(image)
 export default router;

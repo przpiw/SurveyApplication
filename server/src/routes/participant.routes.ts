@@ -1,6 +1,6 @@
 import validateResource from '../middleware/validateResource'
 import requireUser from '../middleware/requireUser'
-import {createParticipantHandler, getParticipantsHandler,findParticipantHandler} from '../controller/participant.controller'
+import {createParticipantHandler, getParticipantsHandler,findParticipantHandler, getParticipantImageHandler} from '../controller/participant.controller'
 import { createParticipantSchema } from '../schema/participant.schema'
 
 import express from 'express'

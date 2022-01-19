@@ -3,6 +3,7 @@ import Participant,{
   ParticipantDocument,
   ParticipantInput,
 } from "../models/participant.model";
+import { gridFS } from "../utils/gridFSStorage";
 
 export async function updateLastSubmit(studentId:string){
   await Participant.findByIdAndUpdate({_id:studentId},{lastSubmit:Date.now()})
@@ -34,6 +35,7 @@ export async function findParticipants(
   {
   return Participant.find(query,projection,options)
 }
+
 
 
 

@@ -6,3 +6,4 @@ node_modules
 /ui/node_modules
 /server/node_modules
 TODO.md
+/server/.env*

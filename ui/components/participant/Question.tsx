@@ -7,7 +7,7 @@ import { imgLoader } from '../../helpers/imgLoader'
 import toast from 'react-hot-toast'
 
 
-const Question = ({handleCompleted, surveyId, questions})=>{
+const Question = ({handleCompleted, surveyId, questions}:any)=>{
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const dispatch = useDispatch()
   const start = Date.now();
@@ -34,10 +34,10 @@ const Question = ({handleCompleted, surveyId, questions})=>{
        <div className='flex flex-col  pt-20 justify-center '>
       <div className='h-3/4 mx-auto space-between flex-wrap  flex flex-row '>
 
-     {questions[currentQuestionIndex].answers.map((item:IAnswer,index:number)=>
-     <div className="flex flex-col mx-8 my-4">
-          <div key={index} onClick={()=>handleQuestionChange(currentQuestionIndex,index)} className=" shadow-sm flex flex-col w-24 "> 
-          <Image loader={imgLoader} src={'https://via.placeholder.com/150'} width={150} height={150} quality={100}/>
+     {questions[currentQuestionIndex].answers.map((item:any,index:number)=>
+     <div key={index}className="flex flex-col mx-8 my-4">
+          <div  onClick={()=>handleQuestionChange(currentQuestionIndex,index)} className=" shadow-sm flex flex-col w-24 "> 
+          <Image alt={`participant_photo${index}`} loader={imgLoader} src={'https://via.placeholder.com/150'} width={150} height={150} quality={100}/>
            <p className="text-center">{item.body}</p> 
         </div>     
   </div>

@@ -6,6 +6,7 @@ export async function getImageHandler(
   req:Request<["params"]>,res:Response
 ){
   try{
+    //@ts-ignore
     const filename = req.params.filename
     const gfsBucket = await gridFS() 
     const file = gfsBucket?.find({filename:filename}).toArray((err, files) => {
@@ -18,6 +19,7 @@ export async function getImageHandler(
         files[0].contentType === 'image/jpeg' ||
         files[0].contentType === 'image/png'
       ) {
+        //@ts-ignore
         gfsBucket.openDownloadStreamByName(req.params.filename).pipe(res)
       } else {
         res.status(404).json({

@@ -34,6 +34,7 @@ export async function findParticipantHandler(
   req: Request<["params"]>,
   res: Response
 ) {
+  //@ts-ignore
   const groupId = req.params.groupId;
 
   const participants = await findParticipants({ groupId,isAchived:false },{},'firstname lastname imageURL lastSubmit');

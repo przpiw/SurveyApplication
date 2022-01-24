@@ -4,8 +4,6 @@ import logger from './utils/logger'
 import createServer from "./utils/server"
 import swaggerDocs from './utils/swagger';
 
-
-
 const port = config.get<number>('port')
 const host = config.get<string>('host')
 

@@ -17,6 +17,7 @@ export async function createResponseHandler(
 ) {
   try{
     const body = req.body;
+    // @ts-ignore
     await createResponse({...body});
     return res.status(201).send("Completed!")
   }

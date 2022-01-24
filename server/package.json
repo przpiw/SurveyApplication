@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "test": "jest"
+    "tsc":"tsc",
+    "build":"npm run tsc",
+    "test": "jest",
+    "start-prod":"set NODE_ENV=production && node build/src/app.js"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -39,6 +42,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dayjs": "^1.10.7",
+    "dotenv": "^14.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",

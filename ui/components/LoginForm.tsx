@@ -36,6 +36,7 @@ export const LoginForm = () => {
       await axios.post(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/api/sessions`,values,{withCredentials:true})
       router.push('/')
     }catch(e){
+      //@ts-ignore
       setLoginError(e.response ?  e.response.data : e.message)
     }
   }
@@ -49,7 +50,7 @@ export const LoginForm = () => {
         <input className={styles.field} id="password" type="password" placeholder="Password" {...register('password')}/>
         <p className={styles.errorMsg}>{errors.password?.message}</p>
         <p className={styles.errorMsg}>{loginError}</p>
-        <div className='mt-8'>
+        <div className='my-8'>
           <button type='submit' className={styles.button}>
             Login
           </button>

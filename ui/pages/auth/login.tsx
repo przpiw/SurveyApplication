@@ -41,7 +41,7 @@ export default function LoginPage(){
             style={{ backgroundImage: `url(https://i.imgur.com/bvr4FAY.png)` }}
           ></div>
           <div className='w-full p-6 lg:w-1/2'>
-            <h2 className='text-xl font-semibold mx-0 rounded-lg py-2 my-4 text-white text-center bg-blue-500'>
+            <h2 className='text-lg font-semibold mx-0 rounded-lg py-2 my-4 text-white text-center bg-blue-500'>
               Wellbeing matters
             </h2>
             <a
